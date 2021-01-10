@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Harry Potter Characters</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@200;300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Harry Potter Characters</h1>
+      <div class="search-characters">
+        <input
+          type="text"
+          class="search-characters-inp"
+          oninput="displaySearchedCharacters(event)"
+        />
+        <span class="material-icons"> search </span>
+      </div>
+      <div id="characters-container"></div>
+    </div>
+
+    <div class="no-searched-character">
+      <h1>no character found!</h1>
+    </div>
+  </body>
+</html>

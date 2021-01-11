@@ -8,7 +8,7 @@ var HPCharacters = [];
 
 // Funtion Definitions
 async function getHPCharacters() {
-  await fetch("http://hp-api.herokuapp.com/api/characters")
+  await fetch("http://hp-api.herokuapp.com/api/charactesrs")
     .then((response) => response.json())
     .then((characters) => {
       return characters.map(({ name, image, actor }) => ({
@@ -20,7 +20,8 @@ async function getHPCharacters() {
     .then((characters) => {
       HPCharacters = characters;
       displayCharacters(characters);
-    });
+    })
+    .catch((err) => window.alert("Failed to fetch the data from the API."));
 }
 
 function displayCharacters(characters) {

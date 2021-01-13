@@ -1,13 +1,14 @@
 :root {
-  --background: #ffffff96;
+  --background: #f6f6f6;
   --text-color: #000000;
   --text-bg-img: url(https://images.unsplash.com/photo-1550757750-4ce187a65014?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=334&q=80);
   --card-width: 280px;
   --card-height: 400px;
   --image-size: 250px;
-  --image-bg: rgb(229, 228, 231);
+  --image-bg: #ededed;
   --card-background: #ffffff;
   --card-border-color: rgba(0, 0, 0, 0.2);
+  --loading-opacity: 0.5;
 }
 
 *,
@@ -232,6 +233,28 @@ html {
 .character-card.skeleton-loading span:last-child {
   margin: 0;
   height: 30px;
+}
+
+.character-card .image,
+.character-card.skeleton-loading span {
+  background-color: var(--image-bg);
+  background: linear-gradient(
+      100deg,
+      rgba(255, 255, 255, 0) 40%,
+      rgba(255, 255, 255, var(--loading-opacity)) 50%,
+      rgba(255, 255, 255, 0) 60%
+    )
+    var(--image-bg);
+
+  background-size: 200% 100%;
+  background-position-x: 180%;
+  animation: 1s skeleton-loading ease-in-out infinite;
+}
+
+@keyframes skeleton-loading {
+  to {
+    background-position-x: -20%;
+  }
 }
 
 /* no searched character */

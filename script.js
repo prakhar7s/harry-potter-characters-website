@@ -467,7 +467,7 @@ function getHPCharacters() {
 
   setTimeout(() => {
     displayCharacters(HPCharacters);
-  }, 2000);
+  }, 20000000);
 }
 
 function displayCharacters(characters) {
@@ -551,6 +551,7 @@ function setDarkModeColor() {
   document_.setProperty("--card-shadow-color", "rgba(0,0,0,0.15");
   document_.setProperty("--card-background", "#000000e5");
   document_.setProperty("--card-border-color", "rgba(255,255,255,.2)");
+  document_.setProperty("--loading-opacity", "0.04");
 }
 
 function setLightModeColor() {
@@ -564,6 +565,7 @@ function setLightModeColor() {
   document_.setProperty("--card-shadow-color", "rgba(143, 141, 141, 0.15)");
   document_.setProperty("--card-background", "#ffffff");
   document_.setProperty("--card-border-color", "rgba(0, 0, 0, 0.2)");
+  document_.setProperty("--loading-opacity", "0.5");
 }
 
 // Funtion Calls

@@ -1,7 +1,19 @@
 // DOM Elements
 const charactersContainer_ = document.querySelector("#characters-container");
 const noSearchedCharacter_ = document.querySelector(".no-searched-character");
+const hamburgerIcon = document.querySelector(".hamburger-menu");
 const document_ = document.documentElement.style;
+
+// Add Event Listeners
+window.addEventListener("scroll", () => {
+  if (window.pageYOffset > 70 && !hamburgerIcon.classList.contains("open")) {
+    hamburgerIcon.style.display = "none";
+  }
+
+  if (window.pageYOffset < 70 && !hamburgerIcon.classList.contains("open")) {
+    hamburgerIcon.style.display = "flex";
+  }
+});
 
 // Characters
 var HPCharacters = [
@@ -467,7 +479,7 @@ function getHPCharacters() {
 
   setTimeout(() => {
     displayCharacters(HPCharacters);
-  }, 20000000);
+  }, 2500);
 }
 
 function displayCharacters(characters) {
@@ -517,7 +529,8 @@ function openHamburgerMenu(event) {
 
   const clickedBtn = tagName === "DIV" ? event.target : event.target.parentNode;
 
-  clickedBtn.classList.toggle("maximize");
+  clickedBtn.parentNode.classList.toggle("hide");
+  clickedBtn.classList.toggle("open");
 }
 
 function enableDarkMode(event) {
